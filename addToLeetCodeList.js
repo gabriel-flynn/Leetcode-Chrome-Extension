@@ -13,16 +13,36 @@ let createListsAndAddElement = () => {
         let createListBtn = parentDiv.querySelector("[class^=btn]"); 
         createListBtn.click();
         
-        
-        
-        let listNameInput = parentDiv.querySelector("[class^=create-favorite-] span > input");
-        //Update the text
-        listNameInput.value = "doesThisWork";
-        let createBtn = parentDiv.querySelector("[class^=create-favorite-block] button");
-        createBtn.click();
-    
-        parentDiv.forEach((element) => {
-            console.log(element);
+        //Build map of lists created
+        let lists = parentDiv.querySelector("[class^=favorites]").children;
+        let mapOfListNames = new Map();
+        for(list of lists) {
+            const listName = list.innerText;
+            mapOfListNames.set(listName, list);
+            console.log(listName);
+        }
+
+
+        //Loop through and set each list up
+        //Starter/Default pattern:
+        //1st day, 2nd, 4th, 8th, 15th, and 30th
+        const daysPattern = [1, 1, 2, 4, 7, 15];
+        let date = new Date(Date.now());
+        daysPattern.forEach(async daysToAdd => {
+            console.log("Date before: " + date);
+            date.setDate(date.getDate() + daysToAdd);
+            console.log("Date after: " + date);
+            const listName =`${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()%100}`;
+            if(!mapOfListNames.has(listName)) {
+                let listNameInput = parentDiv.querySelector("[class^=create-favorite-] span > input");
+
+                //ListName will be of the form MM/DD/YY -> Would like to provide more 
+                listNameInput.value = listName;
+                let createBtn = parentDiv.querySelector("[class^=create-favorite-block] button");
+                awautcreateBtn.click();
+            } else if(list.classList.item(0)?.includes('unselected')) {//If the list exists and this problem isn't added to the list, add it
+                    mapOfListNames.get(list).click();
+            }
         });
     }, 500)
    
