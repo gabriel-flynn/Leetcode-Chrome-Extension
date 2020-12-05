@@ -32,14 +32,15 @@
                 date.setDate(date.getDate() + daysToAdd);
                 const listName =`${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()%100}`;
                 if(!mapOfListNames.has(listName)) {
+                    console.log(listName);
                     let listNameInput = parentDiv.querySelector("[class^=create-favorite-] span > input");
 
                     //ListName will be of the form MM/DD/YY -> Would like to provide more 
                     listNameInput.value = listName;
                     let createBtn = parentDiv.querySelector("[class^=create-favorite-block] button");
-                    awautcreateBtn.click();
-                } else if(list.classList.item(0)?.includes('unselected')) {//If the list exists and this problem isn't added to the list, add it
-                        mapOfListNames.get(list).click();
+                    createBtn.click();
+                } else if(mapOfListNames.get(listName).classList.item(0)?.includes('unselected')) {//If the list exists and this problem isn't added to the list, add it
+                        mapOfListNames.get(listName).click();
                 }
             });
         }, 500)
