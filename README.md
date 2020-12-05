@@ -3,7 +3,6 @@
 
 ## How it works
 
----
 1. Work through leetcode problems and find one you struggle with
 1. Click on the extension and hit the "Add to redo" button
     1. The extension will then create multiple lists that each have a different name where the name is the day to revisit the problem, for example: 12/10/20
