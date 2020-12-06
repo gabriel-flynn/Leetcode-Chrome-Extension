@@ -34,11 +34,16 @@ removeProblem.onclick = () => {
 
 todaysProblems.onclick = async () => {
   chrome.tabs.query({active: true, currentWindow: true}, async (tabs) => {
-    chrome.tabs.update(
-        tabs[0].id,
-        {url: "https://leetcode.com/list/"});
-    await pageIsLoaded(tabs[0]);
-    console.log('still loading');
+
+    const urlRegex = /^https:\/\/leetcode.com\/list\/*$/
+    if(!urlRegex.test(tabs[0].url)) {
+      chrome.tabs.update(
+          tabs[0].id,
+          {url: "https://leetcode.com/list/"}
+      );
+      await pageIsLoaded(tabs[0]);
+    }
+
     chrome.tabs.executeScript(
       tabs[0].id,
       {file: 'src/todaysProblems.js'}

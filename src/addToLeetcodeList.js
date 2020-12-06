@@ -32,7 +32,6 @@
                 date.setDate(date.getDate() + daysToAdd);
                 const listName =`${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()%100}`;
                 if(!mapOfListNames.has(listName)) {
-                    console.log(listName);
                     let listNameInput = parentDiv.querySelector("[class^=create-favorite-] span > input");
 
                     //ListName will be of the form MM/DD/YY -> Would like to provide more 
