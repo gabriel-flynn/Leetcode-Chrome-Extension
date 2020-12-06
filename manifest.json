@@ -7,8 +7,19 @@
         "scripts": ["src/background.js"],
         "persistent": false
       },
-      "page_action": {
-        "default_popup": "popup.html"
-      },
+    "content_scripts": [
+      {
+        "matches": ["https://leetcode.com/list/?"],
+        "run_at": "document_idle",
+        "js": ["inject.js"],
+        "all_frames": true
+      }
+    ],
+    "web_accessible_resources": [
+      "src/todaysProblems.js"
+    ],
+    "page_action": {
+      "default_popup": "popup.html"
+    },
     "manifest_version": 2
   }

@@ -4,25 +4,12 @@
  *      todaysProblemsSamePage.js: executed when the user is already on the leetcode lists page
  */
 
-//This file gets injected onto the webpage through the inject.js file so that we are able to access the window object
 {
-    const todaysProblems = () => {
+    const todaysProblemsSamePage = async () => {
 
-        const waitForjQuery = () => {
-            return new Promise(resolve => {
-                let interval = setInterval(() => {
-                    if(window.jQuery) {
-                        clearInterval(interval);
-                        resolve();
-                    }
-                }, 2000);
-            })
-        }
-
-        await waitForjQuery();
        //Top level list div that contains all the lists
         const listDiv = document.querySelector("[class^=list-group]"); 
-
+        
        //Find the list for today
         let lists = listDiv.children;
         const todaysDate = getTodaysDateString();
@@ -45,5 +32,5 @@
         const date = new Date(Date.now());
         return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()%100}`;
     }
-    todaysProblems();
+    todaysProblemsSamePage();
 }
