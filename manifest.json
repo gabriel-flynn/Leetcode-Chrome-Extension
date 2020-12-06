@@ -1,7 +1,7 @@
 {
-    "name": "LeetCode Tracker",
+    "name": "Leetcode Learner",
     "version": "1.0",
-    "description": "Track LeetCode problems you struggled with an get reminded to redo them! ",
+    "description": "Track Leetcode problems you struggled with and get reminded to redo them! ",
     "permissions": ["activeTab", "declarativeContent", "background"],
     "background": {
         "scripts": ["background.js"],
