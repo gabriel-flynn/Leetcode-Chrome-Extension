@@ -2,9 +2,9 @@
     "name": "Leetcode Learner",
     "version": "1.0",
     "description": "Track Leetcode problems you struggled with and get reminded to redo them! ",
-    "permissions": ["activeTab", "declarativeContent", "background"],
+    "permissions": ["activeTab", "tabs", "declarativeContent", "background"],
     "background": {
-        "scripts": ["background.js"],
+        "scripts": ["src/background.js"],
         "persistent": false
       },
       "page_action": {
