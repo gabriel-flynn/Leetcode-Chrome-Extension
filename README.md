@@ -12,5 +12,5 @@
 1. Custom list naming -> right now lists all conform to MM/DD/YY
 1. Ability to specify custom patterns -> Current pattern is resolve it 1 day later, 2 days later, 4th days later, 8th days later, 15th days later and 30th days later
 1. The ability to clean out/delete all old lists with the click of a button
-~~1. Button to go to today's list of problems to redo~~
+1. ~~Button to go to today's list of problems to redo~~
 1. Google calendar integration? -> Could hlep declutter the list of leetcode lists
