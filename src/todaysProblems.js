@@ -1,4 +1,4 @@
-/**
+/*
  * Difference between todaysProblemsSamePage.js and todaysProblems.js:
  *      todaysProblems.js: executed when the user is not already on the leetcode lists page
  *      todaysProblemsSamePage.js: executed when the user is already on the leetcode lists page
@@ -6,7 +6,7 @@
 
 //This file gets injected onto the webpage through the inject.js file so that we are able to access the window object
 {
-    const todaysProblems = () => {
+    const todaysProblems = async () => {
 
         const waitForjQuery = () => {
             return new Promise(resolve => {
@@ -15,7 +15,7 @@
                         clearInterval(interval);
                         resolve();
                     }
-                }, 2000);
+                }, 1000);
             })
         }
 

@@ -34,7 +34,7 @@ todaysProblems.onclick = async () => {
     } else {
       chrome.tabs.executeScript(
         tabs[0].id,
-        {file: 'src/todaysProblems.js'}
+        {file: 'src/todaysProblemsSameDay.js'}
       );
     }
   });

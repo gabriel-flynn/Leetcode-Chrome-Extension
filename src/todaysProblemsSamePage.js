@@ -1,11 +1,11 @@
-/**
+/*
  * Difference between todaysProblemsSamePage.js and todaysProblems.js:
  *      todaysProblems.js: executed when the user is not already on the leetcode lists page
  *      todaysProblemsSamePage.js: executed when the user is already on the leetcode lists page
  */
 
 {
-    const todaysProblemsSamePage = async () => {
+    const todaysProblemsSamePage = () => {
 
        //Top level list div that contains all the lists
         const listDiv = document.querySelector("[class^=list-group]"); 
