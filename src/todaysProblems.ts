@@ -9,7 +9,7 @@ import {getTodaysDateString} from './utils/DateUtils'
 //This file gets injected onto the webpage through the inject.js file so that we are able to access the window object
 
 const todaysProblems = async () => {
-
+    console.log("SCRIPT EXECUTING!!!");
     //Top level list div that contains all the lists
 
     let listDiv = await waitForDomToRender("[class^=list-group]")

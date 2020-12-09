@@ -29,11 +29,7 @@ todaysProblems.onclick = async () => {
     if(!urlRegex.test(tabs[0].url)) {
       chrome.tabs.update(
           tabs[0].id,
-          {url: "https://leetcode.com/list/"}
-      );
-      chrome.tabs.executeScript(
-        tabs[0].id,
-        {file: 'js/todaysProblems.js'}
+          {url: "https://leetcode.com/list/?"}
       );
     } else {
       chrome.tabs.executeScript(
