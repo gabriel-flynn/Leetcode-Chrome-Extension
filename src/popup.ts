@@ -7,7 +7,7 @@ addProblem.onclick = () => {
   chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
     chrome.tabs.executeScript(
       tabs[0].id,
-      {file: 'src/addToLeetCodeList.js'}
+      {file: 'js/addToLeetCodeLists.js'}
     );
   });
  };
@@ -16,7 +16,7 @@ removeProblem.onclick = () => {
   chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
     chrome.tabs.executeScript(
       tabs[0].id,
-      {file: 'src/removeFromLeetCodeLists.js'}
+      {file: 'js/removeFromLeetCodeLists.js'}
     );
   });
 };
@@ -29,12 +29,16 @@ todaysProblems.onclick = async () => {
     if(!urlRegex.test(tabs[0].url)) {
       chrome.tabs.update(
           tabs[0].id,
-          {url: "https://leetcode.com/list/?"}
+          {url: "https://leetcode.com/list/"}
+      );
+      chrome.tabs.executeScript(
+        tabs[0].id,
+        {file: 'js/todaysProblems.js'}
       );
     } else {
       chrome.tabs.executeScript(
         tabs[0].id,
-        {file: 'src/todaysProblemsSameDay.js'}
+        {file: 'js/todaysProblems.js'}
       );
     }
   });
