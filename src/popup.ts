@@ -25,7 +25,7 @@ removeProblem.onclick = () => {
 todaysProblems.onclick = async () => {
   chrome.tabs.query({active: true, currentWindow: true}, async (tabs) => {
 
-    const urlRegex = /^https:\/\/leetcode.com\/list\/*$/
+    const urlRegex = /^https:\/\/leetcode.com\/list\/*/
     if(!urlRegex.test(tabs[0].url)) {
       chrome.tabs.update(
           tabs[0].id,

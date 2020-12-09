@@ -10,7 +10,7 @@ module.exports = {
         addToLeetcodeLists: path.join(__dirname, srcDir + 'addToLeetcodeLists.ts'),
         removeFromLeetcodeLists: path.join(__dirname, srcDir + 'removeFromLeetcodeLists.ts'),
         todaysProblems: path.join(__dirname, srcDir + 'todaysProblems.ts'),
-        inject: path.join(__dirname, srcDir + 'inject.js')
+        inject: path.join(__dirname, srcDir + 'inject.ts')
     },
     output: {
         path: path.join(__dirname, '../dist/js'),
