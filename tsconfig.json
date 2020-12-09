@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "target": "es6",
+        "noImplicitAny": false,
+        "sourceMap": false,
+        "rootDir": "src",
+        "outDir": "dist/js",
+        "noEmitOnError": true,
+        "alwaysStrict": true,
+        "typeRoots": [ "node_modules/@types" ]
+    }
+}

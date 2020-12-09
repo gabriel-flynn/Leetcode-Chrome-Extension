@@ -4,19 +4,19 @@
     "description": "Track Leetcode problems you struggled with and get reminded to redo them! ",
     "permissions": ["activeTab", "tabs", "declarativeContent", "background"],
     "background": {
-        "scripts": ["src/background.js"],
+        "scripts": ["js/background.js"],
         "persistent": false
       },
     "content_scripts": [
       {
         "matches": ["https://leetcode.com/list/?"],
         "run_at": "document_idle",
-        "js": ["inject.js"],
+        "js": ["js/inject.js"],
         "all_frames": true
       }
     ],
     "web_accessible_resources": [
-      "src/todaysProblems.js"
+      "js/todaysProblems.js"
     ],
     "page_action": {
       "default_popup": "popup.html"
